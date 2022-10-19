@@ -9,7 +9,7 @@ public class MoveBackAndForth : MonoBehaviour
     List<Vector3> startPositions;
     List<Vector3> endPositions;
 
-    float moveAmount = 0; // Don't change this line!
+    float moveAmount = 0.1f; // Don't change this line!
     float lerpAmount = 0; // Don't change this line!
 
     // Start is called before the first frame update
@@ -32,9 +32,10 @@ public class MoveBackAndForth : MonoBehaviour
     void Update()
     {
         //DIRECTIONS: Uncomment the lines below and fix them
-        for (int i = 0; i < ObjectsToMove.Count; i++)
+        for (int i = 0; ObjectsToMove.Count > i; i++)
         {
             ObjectsToMove[i].transform.position = Vector3.Lerp(startPositions[i], endPositions[i], lerpAmount);
+            Debug.Log(startPositions[i] + " endpos: " + endPositions[i]);
         }
 
         //Don't change anything below here!
